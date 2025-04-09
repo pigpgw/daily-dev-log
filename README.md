@@ -1,33 +1,39 @@
-# 💻 Today I Learned - Frontend
+# 💻 Today I D and Learned - Frontend
 
-프론트엔드 개발자로 성장하기 위해 매일 학습한 내용을 기록으로 남깁니다.  
-기록을 통해 지식을 정리하고, 꾸준히 성장하는 개발자가 되겠습니다.
+프론트엔드 개발자로 성장하기 위해 매일의 학습과 실천을 기록합니다.  
+작은 기록들이 쌓여 큰 성장을 만들 수 있다고 믿습니다.  
+꾸준한 기록을 통해 지식을 정리하고, 더 나은 개발자로 나아가겠습니다.
 
 > **"오늘보다 더 나은 내일을 위해"**
 
 ---
 
-## 작성 목적
+## 📌 작성 목적
 
--   매일 학습한 내용을 잊지 않기 위해 기록
--   프론트엔드 중심으로 이론과 실습 정리
--   꾸준한 커밋으로 성장 과정 기록
+-   **학습한 내용을 정리하여 잊지 않기 위해**
+-   **개발뿐만 아니라 모든 성장을 기록하는 습관을 들이기 위해**
+-   **매일의 커밋과 기록으로 성장의 과정을 남기기 위해**
+
+> 이 레포지토리는 **TIL + TODO** 를 결합하여, 계획 - 실천 - 회고까지 한눈에 볼 수 있는 성장형 일지입니다.
 
 ---
 
-## 작성 규칙
+## 📝 작성 규칙
 
 -   디렉토리 및 파일명은 **영어**로 작성합니다.
--   작성 후 즉시 **링크를 걸어 관리**합니다.
--   주제에 맞게 **폴더를 분류**하여 정리합니다.
--   하루 최소 **1커밋**을 목표로 합니다.
--   딥한 내용은 노션에 정리
+-   하루 최소 **1커밋** 이상을 목표로 합니다.
+-   심화 내용은 Notion, GitHub Issue, 또는 PR에 작성하고 링크로 연결합니다.
+-   매일 계획과 회고를 함께 기록하여 다음 성장을 준비합니다.
 
 ---
 
-## 참고한 좋은 TIL 예시
+## 🔗 참고한 좋은 TIL 레포
 
--   [예시1](https://github.com/Highjune/TIL?tab=readme-ov-file)
--   [예시2](https://github.com/namjunemy/TIL)
--   [예시3](https://github.com/Integerous/TIL-1)
--   [예시4](https://github.com/Highjune/TIL?tab=readme-ov-file)
+-   [Highjune/TIL](https://github.com/Highjune/TIL?tab=readme-ov-file)
+-   [namjunemy/TIL](https://github.com/namjunemy/TIL)
+-   [Integerous/TIL-1](https://github.com/Integerous/TIL-1)
+-   [Highjune/TIL](https://github.com/Highjune/TIL?tab=readme-ov-file)
+
+---
+
+> 오늘의 작은 기록이 내일의 큰 변화를 만든다고 생각합니다.
