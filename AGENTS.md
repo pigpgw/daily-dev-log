@@ -1,37 +1,160 @@
-# Repository Guidelines
+# 평일 루틴 2단계 결정 규칙
 
-## Project Structure & Module Organization
+평일 루틴은 한 번에 결정하지 않는다. 오전과 오후, 총 두 번의 사용자 입력으로 같은 날짜의 파일을 순차적으로 완성한다.
 
-This repository is a Markdown-based TIL and daily development log archive. Daily entries live in month folders named `YYYY-MM`, such as `2026-05/`. Use one Markdown file per day, following the existing date patterns in that month, for example `2026-05.26.md`.
+## 비정기 특별 일정
 
-Book study notes live under `books/<book title>/`. Each book folder should include a `README.md` for chapter goals or an overview, plus chapter files such as `챕터1.md`. Keep root-level files limited to repository documentation and configuration.
+특별 일정 규칙은 평일과 주말 모두에 적용한다.
 
-## Build, Test, and Development Commands
+- 약속, 상담, 면접, 병원, 행사, 마감이 정해진 과제처럼 평소 루틴에 없는 일은 루틴과 분리한다.
+- 날짜 제목 바로 아래에 `## 특별 일정`을 만들고 시간순으로 기록한다. 특별 일정이 없으면 이 제목을 만들지 않는다.
+- 사용자가 오전 또는 오후 어느 단계에서 말하더라도 특별 일정을 가장 먼저 반영한다.
+- 상담, 약속, 과제처럼 실제로 수행할 일은 `- [ ] 시간 일정명` 형식의 투두로 작성한다.
+- 연휴, 휴강, 교육 없음처럼 수행할 행동이 아닌 상태는 체크박스 없이 일반 문장으로 작성한다.
+- 여러 날짜에 걸친 특별 일정은 해당 기간의 모든 날짜 파일에 각각 기록한다.
+- 오전·오후 루틴을 수정할 때 기존 특별 일정과 체크 상태를 그대로 보존한다.
+- 같은 특별 일정을 다시 말하면 중복 추가하지 않고 기존 항목을 수정한다.
+- 단순한 `과제 있음` 선택은 오후 루틴 조건으로 처리한다. 과제명이나 마감처럼 별도로 관리할 정보가 있을 때만 특별 일정으로 기록한다.
+- 특별 일정과 루틴 시간이 겹치더라도 사용자가 요청하지 않은 루틴을 임의로 삭제하지 않는다.
 
-There is no application build step or package manager setup in this repository. Useful maintenance commands:
+```md
+# TIL | YYYY.MM.DD (요일)
 
-- `rg --files`: list tracked content quickly and confirm file placement.
-- `npx markdownlint "**/*.md"`: lint Markdown files if `markdownlint-cli` is available.
-- `git status`: review changed daily logs before committing.
+## 특별 일정
 
-Do not add generated build output, dependency folders, or binary assets unless the repository purpose changes.
+추석 연휴 · 휴강
+- [ ] 18:10 ~ 19:40 센터장님 자소서 컨설팅
 
-## Coding Style & Naming Conventions
+## 일정
+```
 
-Write content in Markdown. Use clear headings, short bullet lists, and task lists (`- [ ]`, `- [x]`) for goals and routines. The README asks that directory and file names be written in English, but this repository already contains Korean book titles and chapter names; preserve existing naming for current book-note folders.
+## 입력 단계
 
-Daily log headings should identify the date, for example `# TIL | 2026.05.26 (화요일)`. Keep month directories zero-padded (`2026-05`). Avoid trailing whitespace and keep formatting consistent with neighboring files. The `.markdownlint.json` intentionally relaxes several rules, including line length and heading style.
+### 1단계: 오전 출근 후
 
-## Testing Guidelines
+사용자에게 아래 조건만 받는다.
 
-Testing is editorial rather than automated. Before opening a PR, preview changed Markdown files and check that links, headings, and checkboxes render correctly. When adding book notes, verify that chapter numbering is sequential and that the book `README.md` reflects new chapters or goals.
+- 출근 시간: `7시` 또는 `8시`
 
-## Commit & Pull Request Guidelines
+오전에는 과제 여부, 헬스 여부, 코딩 집중 분야를 묻거나 임의로 결정하지 않는다. 세 조건은 `미정`으로 표시하고 오후 후보 루틴을 그대로 남긴다.
 
-Recent history uses concise documentation commits, especially `docs: update <date> daily log`, for example `docs: update 2026-05-26 daily log`. Follow that convention for daily updates. For broader changes, use a short conventional prefix such as `docs:` or `chore:`.
+운동 여부와 관계없이 운동용 옷은 매일 아침 챙겨둔다. `운동용 옷 챙겨두기`는 헬스 분기가 아니라 `수업 전`의 공통 투두로 만든다.
 
-Pull requests should summarize the date range or book chapters changed, mention any linked Notion, issue, or reference material, and include screenshots only when visual Markdown rendering needs review.
+### 2단계: 오후 과제 공지 후
 
-## Agent-Specific Instructions
+사용자에게 아래 조건을 받는다.
 
-Keep edits narrow and preserve the personal log voice. Do not rewrite historical entries unless requested; append or correct only the files relevant to the current task.
+- 과제: `있음` 또는 `없음`
+- 헬스: `함` 또는 `안 함`
+- 코딩 집중 분야: `프론트`, `백엔드`, `클라우드` 중 하나
+
+과제가 있는 날에는 헬스 여부를 무시하고 과제 루틴을 선택한다.
+
+## 파일 수정 원칙
+
+1. 각 단계에서 반드시 해당 날짜 파일의 현재 내용을 먼저 읽는다.
+2. 첫 입력에서는 공통 `운동용 옷 챙겨두기`, 출근 시간에 맞는 `수업 전`, 고정 `수업`, 공통 `수업 후` 투두를 만들고, 결정되지 않은 오후 조건은 `미정`으로 표시한다. 세 가지 오후 후보 루틴은 삭제하지 않고 모두 남긴다.
+3. 두 번째 입력에서는 오전에 만든 내용을 다시 생성하지 않고 `오늘 선택`의 `미정` 값을 확정한 뒤, 세 가지 오후 후보 중 선택된 하나만 남긴다.
+4. 사용자가 오전부터 체크한 `- [x]` 상태는 두 번째 입력에서도 그대로 보존한다. 기존 체크박스를 `- [ ]`로 초기화하지 않는다.
+5. 같은 날짜 파일의 제목, 특별 일정, 사용자 기록 등 루틴 밖의 내용은 변경하지 않는다.
+6. 오전 1단계에서는 결정되지 않은 선택지와 후보 루틴을 남긴다. 오후 2단계에서 조건이 확정된 뒤에만 맞지 않는 선택지와 루틴을 제거한다.
+7. 조건, 원칙, 상태 설명은 체크박스 없이 일반 문장으로 작성하고, 실제로 수행할 행동만 투두로 만든다.
+8. 새로 추가하는 투두만 미완료 상태인 `- [ ]`로 작성한다.
+9. 두 번째 입력이 다시 들어오면 기존 저녁 분기를 중복 추가하지 않고 선택된 분기로 교체한다.
+
+## 1단계 오전 루틴
+
+`오늘 선택`에는 선택된 출근 시간과 아직 결정되지 않은 오후 조건을 일반 문장으로 기록한다.
+
+```md
+## 오늘 선택
+
+출근 시간: 7시
+과제: 미정
+헬스: 미정
+코딩 집중: 미정
+```
+
+### 7시 출근
+
+```md
+## 수업 전
+
+- [ ] 운동용 옷 챙겨두기
+- [ ] 07:00 ~ 08:00 SKCT
+- [ ] 08:00 ~ 09:00 코딩테스트
+```
+
+### 8시 출근
+
+```md
+## 수업 전
+
+- [ ] 운동용 옷 챙겨두기
+- [ ] 08:00 ~ 09:00 SKCT
+```
+
+### 공통 수업 및 수업 후
+
+```md
+## 수업
+
+- [ ] 09:00 ~ 12:30 수업
+- [ ] 12:30 ~ 13:10 점심 및 휴식
+- [ ] 13:10 ~ 18:00 수업
+
+## 수업 후
+
+- [ ] 오전에 못 푼 SKCT 풀기
+```
+
+오전 1단계에서도 아래의 오후 후보 세 분기를 모두 표시한다. 코딩 분야가 정해지기 전에는 `코딩 학습 - 분야 미정`으로 적는다.
+
+## 2단계 오후 선택 기록
+
+기존 `오늘 선택`의 출근 시간 아래에 오후 조건을 일반 문장으로 추가한다.
+
+```md
+과제: 없음
+헬스: 함
+코딩 집중: 백엔드
+```
+
+## 오후 후보 및 2단계 수업 후 분기
+
+오전 1단계에는 아래 세 분기를 모두 남긴다. 오후 2단계에서 조건이 확정되면 선택된 하나만 남기고, 그 분기의 `코딩 학습 - 분야 미정`을 선택한 분야로 교체한다.
+
+### 과제 있는 날
+
+```md
+### 과제 있는 날
+
+- [ ] 저녁
+- [ ] 과제
+- [ ] 영어
+- [ ] 코딩 학습 - 분야 미정
+```
+
+### 과제 없고 헬스 하는 날
+
+```md
+### 과제 없고 헬스 하는 날
+
+식사 원칙: 식당 저녁 대신 가벼운 식사
+
+- [ ] 운동 전 크레아틴 먹기
+- [ ] 운동하고 헬스장에서 씻고 바로 교육장으로 가기
+- [ ] 운동 후 가볍게 먹기
+- [ ] 영어
+- [ ] 코딩 학습 - 분야 미정
+```
+
+### 과제 없고 헬스 안 하는 날
+
+```md
+### 과제 없고 헬스 안 하는 날
+
+- [ ] 저녁
+- [ ] 영어
+- [ ] 코딩 학습 - 분야 미정
+```
